@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ca">
+
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+   <title>Estudi de mercat: IFS Cloud</title>
+   <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+   <header>
+      <h1>IFS Cloud</h1>
+      <p>Estudi de mercat d'un Sistema de Gestió Empresarial (ERP)</p>
+      <p>Sistemes de gestió empresarial · 2n DAM · RA1 A1 · Alumnes: [nom 1] i [nom 2]</p>
+   </header>
+   <nav>
+      <a href="#intro">Introducció</a><a href="#general">Informació general</a><a href="#llicencies">Llicències i
+         preus</a><a href="#bd">Base de dades</a><a href="#install">Instal·lació</a><a href="#moduls">Mòduls</a><a
+         href="#comp">Competidors</a><a href="#feina">Ofertes de feina</a><a href="#pros">Avantatges/inconvenients</a><a
+         href="#bib">Bibliografia</a>
+   </nav>
+   <main>
+
+      <section id="intro">
+         <h2>1. Introducció</h2>
+         <p>Un <b>Sistema de Gestió Empresarial (SGE)</b> és un programari que integra i automatitza els processos d'una
+            organització (finances, compres, producció, magatzem, recursos humans, clients...) en una única plataforma
+            amb una base de dades comuna. Els tipus principals són els <b>ERP</b> (planificació de recursos
+            empresarials), els <b>CRM</b> (relació amb clients) i les eines de <b>BI</b> (anàlisi de dades).</p>
+         <p>Hem triat <b>IFS Cloud</b>, un <b>ERP</b> modern especialitzat en empreses "intensives en actius":
+            manufactura, aeroespacial i defensa, energia, construcció i serveis de camp. Inclou també funcionalitats
+            d'EAM, FSM i IA, per la qual cosa s'acosta a una plataforma completa més que a un ERP clàssic.</p>
+      </section>
+
+      <section id="general">
+         <h2>2. Informació general del sistema</h2>
+         <div class="grid">
+            <div class="box"><b>Desenvolupador</b><br>IFS AB (Industrial and Financial Systems), Linköping, Suècia</div>
+            <div class="box"><b>Primera versió</b><br>Empresa fundada el 1983; IFS Applications als anys 90; IFS Cloud
+               presentat el 2020 (primera release numerada 21R1)</div>
+            <div class="box"><b>Versió estable</b><br>26R1 (maig 2026). Cicle de dues releases a l'any: R1 (primavera) i
+               R2 (tardor)</div>
+            <div class="box"><b>Llenguatges</b><br>PL/SQL (lògica de negoci), Java (capa intermèdia),
+               JavaScript/TypeScript (client web) i models propis d'IFS</div>
+            <div class="box"><b>Plataformes</b><br>Client: qualsevol navegador (Chrome, Edge, Firefox, Safari) i apps
+               mòbils iOS/Android. Servidor: contenidors Linux sobre Kubernetes</div>
+            <div class="box"><b>Sector</b><br>ERP + EAM + FSM + IA (IFS.ai)</div>
+         </div>
+         <h3>Història cronològica</h3>
+         <div class="tl">
+            <div><b>1983</b> – Es funda IFS a Linköping (Suècia).</div>
+            <div><b>Anys 90</b> – Naix IFS Applications (arquitectura client-servidor sobre Oracle).</div>
+            <div><b>2000-2018</b> – Versions 2003, 7.5, 8, 9 i 10; IFS es consolida en manufactura i manteniment.</div>
+            <div><b>2020-2021</b> – Es presenta IFS Cloud: arquitectura web, contenidors i releases semestrals (21R1,
+               21R2...).</div>
+            <div><b>2023-2025</b> – Arriba IFS.ai (IA integrada) i solucions de sostenibilitat (ESG).</div>
+            <div><b>2026</b> – Release 26R1 (maig), amb IFS Zero per a la gestió d'emissions.</div>
+         </div>
+         <h3>Arquitectura</h3>
+         <p>IFS Cloud segueix una arquitectura <b>multicapa</b> amb serveis exposats via <b>REST/OData</b> (les
+            "projections"), desplegada en <b>contenidors Docker sobre Kubernetes</b>.</p>
+         <svg viewBox="0 0 700 150" width="100%" role="img" aria-label="Diagrama d'arquitectura"
+            style="color:var(--tx)">
+            <g fill="none" stroke="#7a4df0" stroke-width="2">
+               <rect x="10" y="30" width="150" height="70" rx="10" />
+               <rect x="200" y="30" width="150" height="70" rx="10" />
+               <rect x="390" y="30" width="150" height="70" rx="10" />
+               <rect x="580" y="30" width="110" height="70" rx="10" />
+               <path d="M160 65h40M350 65h40M540 65h40" />
+            </g>
+            <text x="35" y="60">Client web</text><text x="35" y="80">(Aurena) / App</text>
+            <text x="222" y="60">Middleware</text><text x="222" y="80">Java · REST/OData</text>
+            <text x="412" y="60">Lògica PL/SQL</text><text x="412" y="80">(capa de negoci)</text>
+            <text x="602" y="60">Oracle</text><text x="602" y="80">Database</text>
+            <text x="200" y="130">Tot desplegat en contenidors (Docker/Kubernetes)</text>
+         </svg>
+      </section>
+
+      <section id="llicencies">
+         <h2>3. Tipus de llicències i preus</h2>
+         <ul>
+            <li><b>Llicència:</b> comercial i privativa (no és programari lliure).</li>
+            <li><b>Modalitats de distribució:</b> <b>Cloud</b> (SaaS gestionat per IFS), <b>Remote</b> (IFS opera
+               l'entorn del client) i <b>Managed/On-Premise</b> (el client l'executa amb la seva infraestructura o
+               núvol).</li>
+            <li><b>Subscripció:</b> per usuaris (nominals o concurrents) i per mòduls/rol. Els preus <b>no són
+                  públics</b>: es fan a mida per pressupost segons usuaris, mòduls i desplegament. Normalment hi ha
+               també costos d'implantació amb un partner.</li>
+         </ul>
+      </section>
+
+      <section id="bd">
+         <h2>4. Sistemes gestors de bases de dades</h2>
+         <ul>
+            <li>El SGBD és <b>relacional</b>: <b>Oracle Database</b>, on resideix gran part de la lògica de negoci en
+               PL/SQL.</li>
+            <li>S'hi afegeixen serveis per a analítica (en memòria) i integració via APIs OData/REST.</li>
+            <li>Requereix llicències d'Oracle en desplegaments propis; en modalitat Cloud les gestiona IFS.</li>
+         </ul>
+      </section>
+
+      <section id="install">
+         <h2>5. Instal·lació i accés al sistema</h2>
+         <ul>
+            <li><b>Instal·ladors:</b> paquets/imatges de contenidor i eines de desplegament (Helm/Kubernetes) per a
+               entorns propis; en Cloud no cal instal·lar res.</li>
+            <li><b>Contractació:</b> demanar una demo a IFS o a un partner → pressupost → projecte d'implantació
+               (anàlisi, configuració, migració de dades, formació, go-live).</li>
+            <li><b>Accés:</b> client web (Aurena) des del navegador, aplicacions mòbils (p. ex. per a tècnics de camp) i
+               integracions per API.</li>
+         </ul>
+      </section>
+
+      <section id="moduls">
+         <h2>6. Mòduls i funcionalitats</h2>
+         <div class="grid">
+            <div class="box"><b>EAM – Enterprise Asset Management</b><br>Manteniment preventiu i correctiu, ordres de
+               treball, gestió d'actius i previsió d'avaries amb IA.</div>
+            <div class="box"><b>Manufactura i cadena de subministrament</b><br>Planificació de producció (MRP), BOM,
+               rutes, ordres de fabricació, magatzem, compres i inventari.</div>
+            <div class="box"><b>Field Service Management (FSM)</b><br>Planificació de tècnics, optimització de rutes,
+               contractes de servei i app mòbil.</div>
+         </div>
+         <p>Altres mòduls: Finances, Projectes, HCM (RH) i Sostenibilitat (IFS Zero).</p>
+         <h3>Crear nous mòduls i extensions</h3>
+         <p>IFS Cloud permet <b>configurar</b> (camps personalitzats, pàgines, esdeveniments) i <b>estendre</b> el
+            sistema amb codi. Llenguatges: <b>PL/SQL</b>, models declaratius d'IFS (entity, projection, client) i
+            <b>Java</b>/APIs REST per a integracions. L'eina de desenvolupament habitual és <b>IFS Developer Studio</b>
+            (basat en Visual Studio Code) i clients SQL com SQL Developer.</p>
+         <pre>-- Exemple simplificat de funció PL/SQL
+FUNCTION Get_Discount (customer_id_ IN VARCHAR2) RETURN NUMBER IS
+   discount_ NUMBER := 0;
+BEGIN
+   SELECT discount INTO discount_
+   FROM customer_tab WHERE customer_id = customer_id_;
+   RETURN discount_;
+END Get_Discount;
+
+# Exemple de crida REST (OData) a una projection
+GET https://&lt;instancia&gt;.ifs.cloud/main/ifsapplications/projection/v1/CustomerHandling.svc/Customers</pre>
+      </section>
+
+      <section id="comp">
+         <h2>7. Comparativa amb competidors</h2>
+         <div class="tw">
+            <table>
+               <tr>
+                  <th></th>
+                  <th>IFS Cloud</th>
+                  <th>SAP S/4HANA</th>
+                  <th>Microsoft Dynamics 365</th>
+                  <th>Odoo</th>
+               </tr>
+               <tr>
+                  <td>Llicència</td>
+                  <td>Comercial</td>
+                  <td>Comercial</td>
+                  <td>Comercial</td>
+                  <td>Community lliure + Enterprise de pagament</td>
+               </tr>
+               <tr>
+                  <td>Preu</td>
+                  <td>A mida, alt</td>
+                  <td>A mida, molt alt</td>
+                  <td>Per usuari/mes (segons producte)</td>
+                  <td>Baix; Enterprise per usuari/mes</td>
+               </tr>
+               <tr>
+                  <td>Punt fort</td>
+                  <td>EAM, FSM, manufactura, aeroespacial</td>
+                  <td>Grans corporacions, ampli ecosistema</td>
+                  <td>Integració amb Microsoft 365/Power BI</td>
+                  <td>Modular, flexible i econòmic</td>
+               </tr>
+               <tr>
+                  <td>Llenguatges</td>
+                  <td>PL/SQL, Java</td>
+                  <td>ABAP</td>
+                  <td>X++, C#/.NET, Power Platform</td>
+                  <td>Python, JavaScript, XML</td>
+               </tr>
+               <tr>
+                  <td>SGBD</td>
+                  <td>Oracle</td>
+                  <td>SAP HANA</td>
+                  <td>SQL Server / Azure SQL</td>
+                  <td>PostgreSQL</td>
+               </tr>
+               <tr>
+                  <td>Públic objectiu</td>
+                  <td>Mitjana/gran empresa industrial</td>
+                  <td>Gran empresa</td>
+                  <td>Pime i gran empresa</td>
+                  <td>Pime</td>
+               </tr>
+            </table>
+         </div>
+         <p><small>Preus orientatius i qualitatius: consulteu els proveïdors per a xifres actuals.</small></p>
+      </section>
+
+      <section id="feina">
+         <h2>8. Ofertes de feina amb coneixements d'IFS</h2>
+         <div class="tw">
+            <table>
+               <tr>
+                  <th>Oferta</th>
+                  <th>Ubicació</th>
+                  <th>Requisits principals</th>
+               </tr>
+               <tr>
+                  <td>IFS Developer (Empiric)</td>
+                  <td>Vigo, Valladolid, Mos, Ceuta (Espanya)</td>
+                  <td>3-5 anys en IFS Finance/SCM/Projects, IFS Cloud 22R2 o superior, desenvolupament de servidor,
+                     bases de dades, Terraform. <a
+                        href="https://www.wearedevelopers.com/en/jobs/ext/5613302/ifs-developer">Veure oferta</a></td>
+               </tr>
+               <tr>
+                  <td>IFS Project Manager</td>
+                  <td>Espanya (remot)</td>
+                  <td>Gestió de projectes ERP, Agile/Waterfall, PRINCE2/PMP, anglès fluid. <a
+                        href="https://it-works-v2.sites.sourceflow.co.uk/jobs/ifs-project-manager-51697/">Veure
+                        oferta</a></td>
+               </tr>
+               <tr>
+                  <td>IFS Cloud Consultant (iPivot / PwC)</td>
+                  <td>Híbrid / remot</td>
+                  <td>Implantació IFS Cloud EAM/ERP, manufactura, certificacions IFS Practitioner. <a
+                        href="https://jobs.weekday.works/ifs-cloud-consultant-at-ipivot-wkdyfuuw2g">Veure oferta</a>
+                  </td>
+               </tr>
+               <tr>
+                  <td>IFS HCM Consultant</td>
+                  <td>Alemanya (remot/híbrid)</td>
+                  <td>IFS Cloud HCM, Core HR, temps i absències, implantació completa. <a
+                        href="https://it-works-v2.sites.sourceflow.co.uk/jobs/ifs-developer-49615/">Veure oferta</a>
+                  </td>
+               </tr>
+               <tr>
+                  <td>IFS Project Leader (Right People Group)</td>
+                  <td>UE (híbrid)</td>
+                  <td>Migració d'IFS antic a IFS Cloud en 7 països. <a
+                        href="https://rightpeoplegroup.com/it/open-assignments/consultant-task-ifs-project-leader">Veure
+                        oferta</a></td>
+               </tr>
+            </table>
+         </div>
+         <p>Es demanen perfils <b>funcionals</b> (finances, cadena de subministrament, manteniment), <b>tècnics</b>
+            (PL/SQL, integracions) i de <b>gestió de projectes</b>. L'anglès és gairebé sempre imprescindible.</p>
+      </section>
+
+      <section id="pros">
+         <h2>9. Avantatges i inconvenients</h2>
+         <div class="tw">
+            <table>
+               <tr>
+                  <th>Punts forts</th>
+                  <th>Punts dèbils</th>
+               </tr>
+               <tr>
+                  <td class="pro">Molt especialitzat en EAM, FSM i manufactura<br>Releases semestrals sense grans
+                     migracions (evergreen)<br>Arquitectura moderna en contenidors i APIs REST<br>IA integrada (IFS.ai)
+                     i sostenibilitat<br>Bona valoració en sectors industrials</td>
+                  <td class="con">Preus alts i poc transparents<br>Implantació llarga i costosa<br>Dependència
+                     d'Oracle<br>Comunitat més petita que SAP o Odoo<br>Menys adequat per a petites empreses</td>
+               </tr>
+            </table>
+         </div>
+      </section>
+
+      <section id="bib">
+         <h2>10. Bibliografia i fonts</h2>
+         <ul>
+            <li><a href="https://www.ifs.com/en/ifs-cloud/releases">IFS – Releases d'IFS Cloud (26R1, maig 2026)</a>
+            </li>
+            <li><a href="https://www.ifs.com">IFS – Web oficial</a> i <a href="https://community.ifs.com">Comunitat
+                  IFS</a></li>
+            <li><a href="https://docs.workato.com/en/connectors/ifs.html">Workato – Connector IFS (cloud/on-premise)</a>
+            </li>
+            <li><a href="https://www.enterprisetimes.co.uk/?p=88663">Enterprise Times – Release d'IFS Cloud amb
+                  IFS.ai</a></li>
+            <li><a href="https://www.wearedevelopers.com/en/jobs/ext/5613302/ifs-developer">WeAreDevelopers – Ofertes
+                  IFS Developer</a></li>
+            <li>Sitges d'ofertes i fonts citades a la secció 8.</li>
+         </ul>
+      </section>
+   </main>
+   <footer>Treball realitzat amb l'ajuda d'eines d'IA · Sistemes de gestió empresarial · 2n DAM</footer>
+</body>
+
+</html>
